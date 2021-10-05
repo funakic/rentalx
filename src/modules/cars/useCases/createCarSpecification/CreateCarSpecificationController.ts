@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { CreateCarSpecificatioUseCase } from "./CreateCarSpecificationUseCase";
+import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
 
 class CreateCarSpecificationController {
@@ -9,7 +9,7 @@ class CreateCarSpecificationController {
         const { specifications_id } = request.body;
 
         const createCarSpecificationUseCase = container.resolve(
-            CreateCarSpecificatioUseCase
+            CreateCarSpecificationUseCase
         );
 
         const cars = await createCarSpecificationUseCase.execute({
